@@ -1,0 +1,17 @@
+# Godot
+.godot/
+.import/
+
+# Godot-specific
+*.translation
+export_presets.cfg
+
+# Imported assets (automatically generated)
+*.tmp
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
