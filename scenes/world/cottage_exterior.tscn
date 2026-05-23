@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://cottage_exterior_scene"]
+
+[ext_resource type="Script" path="res://scripts/world/cottage_exterior.gd" id="1_exterior"]
+[ext_resource type="TileSet" uid="uid://cottage_exterior_tileset" path="res://art/sprites/tiles/cottage_exterior_tileset.tres" id="2_tileset"]
+[ext_resource type="PackedScene" uid="uid://player_scene" path="res://scenes/player/player.tscn" id="3_player"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_door"]
+size = Vector2(32, 16)
+
+[node name="CottageExterior" type="Node2D"]
+script = ExtResource("1_exterior")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_tileset")
+format = 2
+
+[node name="Ground" type="TileMapLayer" parent="TileMap"]
+
+[node name="Decoration" type="TileMapLayer" parent="TileMap"]
+z_index = 1
+
+[node name="Collision" type="TileMapLayer" parent="TileMap"]
+z_index = 2
+
+[node name="from_interior" type="Marker2D" parent="."]
+position = Vector2(232, 256)
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(232, 280)
+
+[node name="Player" parent="." instance=ExtResource("3_player")]
+position = Vector2(232, 280)
+
+[node name="DoorZone" type="Area2D" parent="."]
+position = Vector2(232, 232)
+collision_layer = 0
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorZone"]
+shape = SubResource("RectangleShape2D_door")
