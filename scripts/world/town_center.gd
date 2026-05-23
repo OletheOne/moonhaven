@@ -91,8 +91,8 @@ func _paint_north_road() -> void:
 
 
 func _paint_fountain() -> void:
-	for x in FOUNTAIN_ORIGIN.x until FOUNTAIN_ORIGIN.x + FOUNTAIN_SIZE:
-		for y in FOUNTAIN_ORIGIN.y until FOUNTAIN_ORIGIN.y + FOUNTAIN_SIZE:
+	for x in range(FOUNTAIN_ORIGIN.x, FOUNTAIN_ORIGIN.x + FOUNTAIN_SIZE):
+		for y in range(FOUNTAIN_ORIGIN.y, FOUNTAIN_ORIGIN.y + FOUNTAIN_SIZE):
 			var cell := Vector2i(x, y)
 			_set_tile(decoration_layer, cell, TILE_FOUNTAIN)
 
@@ -104,8 +104,8 @@ func _paint_buildings() -> void:
 		var origin: Vector2i = building["origin"]
 		var door_cells: Array = building["door_cells"]
 
-		for x in origin.x until origin.x + BUILDING_SIZE.x:
-			for y in origin.y until origin.y + BUILDING_SIZE.y:
+		for x in range(origin.x, origin.x + BUILDING_SIZE.x):
+			for y in range(origin.y, origin.y + BUILDING_SIZE.y):
 				var cell := Vector2i(x, y)
 				var is_door := cell in door_cells
 

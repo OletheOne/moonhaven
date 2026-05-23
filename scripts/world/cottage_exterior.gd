@@ -53,20 +53,20 @@ func _build_exterior() -> void:
 
 
 func _paint_farm_plot() -> void:
-	for x in FARM_ORIGIN.x until FARM_ORIGIN.x + FARM_SIZE:
-		for y in FARM_ORIGIN.y until FARM_ORIGIN.y + FARM_SIZE:
+	for x in range(FARM_ORIGIN.x, FARM_ORIGIN.x + FARM_SIZE):
+		for y in range(FARM_ORIGIN.y, FARM_ORIGIN.y + FARM_SIZE):
 			_set_tile(ground_layer, Vector2i(x, y), TILE_DIRT)
 
 
 func _paint_road() -> void:
-	for y in COTTAGE_ORIGIN.y + COTTAGE_SIZE.y - 1 until MAP_SIZE:
+	for y in range(COTTAGE_ORIGIN.y + COTTAGE_SIZE.y - 1, MAP_SIZE):
 		for road_x in ROAD_X_TILES:
 			_set_tile(ground_layer, Vector2i(road_x, y), TILE_ROAD)
 
 
 func _paint_cottage() -> void:
-	for x in COTTAGE_ORIGIN.x until COTTAGE_ORIGIN.x + COTTAGE_SIZE.x:
-		for y in COTTAGE_ORIGIN.y until COTTAGE_ORIGIN.y + COTTAGE_SIZE.y:
+	for x in range(COTTAGE_ORIGIN.x, COTTAGE_ORIGIN.x + COTTAGE_SIZE.x):
+		for y in range(COTTAGE_ORIGIN.y, COTTAGE_ORIGIN.y + COTTAGE_SIZE.y):
 			var cell := Vector2i(x, y)
 			var is_door := cell in DOOR_CELLS
 
