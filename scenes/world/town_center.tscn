@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://town_center_scene"]
+
+[ext_resource type="Script" path="res://scripts/world/town_center.gd" id="1_town"]
+[ext_resource type="TileSet" uid="uid://town_center_tileset" path="res://art/sprites/tiles/town_center_tileset.tres" id="2_tileset"]
+[ext_resource type="PackedScene" uid="uid://player_scene" path="res://scenes/player/player.tscn" id="3_player"]
+
+[node name="TownCenter" type="Node2D"]
+script = ExtResource("1_town")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_tileset")
+format = 2
+
+[node name="Ground" type="TileMapLayer" parent="TileMap"]
+
+[node name="Decoration" type="TileMapLayer" parent="TileMap"]
+z_index = 1
+
+[node name="Collision" type="TileMapLayer" parent="TileMap"]
+z_index = 2
+
+[node name="from_cottage" type="Marker2D" parent="."]
+position = Vector2(312, 40)
+
+[node name="thaddeus_spawn" type="Marker2D" parent="."]
+position = Vector2(136, 184)
+
+[node name="bram_spawn" type="Marker2D" parent="."]
+position = Vector2(504, 184)
+
+[node name="marisol_spawn" type="Marker2D" parent="."]
+position = Vector2(136, 296)
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(312, 72)
+
+[node name="Player" parent="." instance=ExtResource("3_player")]
+position = Vector2(312, 72)
