@@ -162,3 +162,9 @@ libraries = {
 "": SubResource("AnimationLibrary_player")
 }
 autoplay = "idle_down"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 5.0
+zoom = Vector2(3, 3)
+
