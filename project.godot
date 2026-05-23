@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Moonhaven"
-run/main_scene="res://scenes/systems/player_test.tscn"
+run/main_scene="res://scenes/world/cottage_interior.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
