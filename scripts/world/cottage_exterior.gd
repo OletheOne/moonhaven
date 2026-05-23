@@ -1,4 +1,3 @@
-@tool
 extends Node2D
 
 const MAP_SIZE := 30

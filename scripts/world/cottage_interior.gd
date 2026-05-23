@@ -1,4 +1,3 @@
-@tool
 extends Node2D
 
 const ROOM_WIDTH := 12
